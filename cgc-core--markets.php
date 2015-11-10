@@ -33,7 +33,7 @@ class cgcCoreMarkets {
 	}
 
 	public static function rest_api() {
-		cgcApiRouteFactory::create( 'cgcVideoTrackingProcess' );
+
 		cgcApiRouteFactory::create( 'cgcProcessLiveNotify', array( 'GET', 'POST') );
 	}
 }
