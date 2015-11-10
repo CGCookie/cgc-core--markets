@@ -1,0 +1,27 @@
+{
+   	"name": "cgcookie/cgc-core-markets",
+   	"type": "wordpress-plugin",
+	"description": "Core plugin for CGC Markets utilizing CGC Core base plugin",
+	"keywords": [ "markets-core", "plugin"],
+	"homepage": "http://cgcookiemarkets.com",
+	"authors": [
+	    {
+	      	"name": "Nick Haskins",
+	      	"email": "nick@cgcookie.com",
+	      	"homepage": "http://cgcookie.com"
+	    },
+	    {
+	      	"name": "Wes Burke",
+	      	"email": "wes@cgcookie.com",
+	      	"homepage": "http://cgcookie.com"
+	    },
+	   	{
+	      	"name": "Jonathan Williamson",
+	      	"email": "jonathan@cgcookie.com",
+	      	"homepage": "http://cgcookie.com"
+	    }
+	],
+   	"require": {
+     	"composer/installers": "~1.0.6"
+   	}
+}
