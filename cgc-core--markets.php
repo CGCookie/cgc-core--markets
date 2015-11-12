@@ -22,9 +22,8 @@ class cgcCoreMarkets {
 		//require( CGC5_CORE_DIR.'/includes/class.process-live-notify.php' );
 		//require( CGC5_CORE_DIR.'/includes/class.live-notify-script.php' );
 		require( CGC5_CORE_DIR.'/includes/class.user-api.php' );
-		require( CGC5_CORE_DIR.'/public/includes/class.assets.php' );
+		//require( CGC5_CORE_DIR.'/public/includes/class.assets.php' );
 		require( CGC5_CORE_DIR.'/public/includes/user-functions.php' );
-		require( CGC5_CORE_DIR.'/includes/class.custom-login.php' );
 
 		/*
 		*	Load actions need for live notifications from cgc core
@@ -39,15 +38,7 @@ class cgcCoreMarkets {
 		/*
 		*	Load custom login actions from the custom login class in cgc core
 		*/
-		add_action( 'login_enqueue_scripts', 					array( 'cgcFiveCustomLogin', 'assets' ) );
-		add_filter( 'login_headerurl', 							array( 'cgcFiveCustomLogin', 'logo_url' ) );
-		add_filter( 'login_headertitle', 						array( 'cgcFiveCustomLogin', 'logo_url_title' ) );
-		add_action( 'wp_footer', 								array( 'cgcFiveCustomLogin', 'login_modal' ) );
-		add_action( 'init', 									array( 'cgcFiveCustomLogin', 'redirect_wplogin' ) );
-		add_action( 'wp_login_failed', 							array( 'cgcFiveCustomLogin', 'login_failed' ) );
-		add_filter( 'authenticate', 							array( 'cgcFiveCustomLogin', 'verify_username_password' ), 1, 3 );
-		add_action( 'wp_ajax_nopriv_process_user_lookup', 		array( 'cgcFiveCustomLogin', 'user_lookup' ) );
-		add_action( 'wp_ajax_nopriv_process_reset_password', 	array( 'cgcFiveCustomLogin', 'reset_password' ) );
+		//add_action( 'wp_enqueue_scripts',	 					array( 'cgcFiveAssets', 'scripts' ) );
 	}
 
 	public static function rest_api() {
