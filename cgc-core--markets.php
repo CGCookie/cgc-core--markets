@@ -24,6 +24,7 @@ class cgcCoreMarkets {
 		require( CGC5_CORE_DIR.'/includes/class.user-api.php' );
 		//require( CGC5_CORE_DIR.'/public/includes/class.assets.php' );
 		require( CGC5_CORE_DIR.'/public/includes/user-functions.php' );
+		require( CGC5_CORE_DIR.'/public/includes/class.social.php' );
 
 		/*
 		*	Load actions need for live notifications from cgc core
@@ -35,10 +36,13 @@ class cgcCoreMarkets {
 		//add_action( 'rest_api_init', 			array( 'cgcApiRouteFactory', 'register_routes' ) );
 		//add_action( 'rest_api_init', 			array($this, 'rest_api'), 5 );
 
-		/*
-		*	Load custom login actions from the custom login class in cgc core
+		/**
+		*
+		*	Social Sharing
 		*/
-		//add_action( 'wp_enqueue_scripts',	 					array( 'cgcFiveAssets', 'scripts' ) );
+		add_action( 'wp_head', 					array( 'cgcSocial', 'card_meta' ) );
+		add_action( 'wp_head', 					array( 'cgcSocial', 'sharing' ) );
+		add_shortcode( 'cgc_social_share', 		array( 'cgcSocial', 'button_shortcode' ) );
 	}
 
 	public static function rest_api() {
